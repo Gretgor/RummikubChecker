@@ -1,12 +1,12 @@
 # RummikubChecker
 A Python implementation of a checking algorithm for arbitrary lists of Rummikub pieces
 
-======= Description of Problem:
+Description of Problem:
 =
 - Input: a list of simple Rummikub tiles.
 - Output: True if the list can be broken down into valid combinations without any pieces left out, False otherwise.
 
--- Rummikub pieces:
+Rummikub pieces:
 -
 Each Rummikub piece consists of two pieces of information: 
 - A number, between 1 and 13.
@@ -16,7 +16,7 @@ Each piece is represented by an ordered pair (number, color) in the program.
 
 There is an extra special piece, which will be represented by (0,0), which is a wild card.
 
--- Valid combinations:
+Valid combinations:
 -
 - Sequences: sequences of consecutive numbers of the same color, comprised of at least three pieces.
 - Tuples: tuples of pieces of the same number but different colors, comprised of at least three pieces.
@@ -24,7 +24,7 @@ There is an extra special piece, which will be represented by (0,0), which is a 
 WILD CARDS: a wild card piece can be used at most once per sequence or tuple, replacing exactly one (but any) missing piece.
 
 
-======= Description of Solution Algorithm:
+Description of Solution Algorithm:
 =
 Our solution involves a simple branch-and-bound algorithm that checks possible combinations piece-by-piece.
 
@@ -37,7 +37,7 @@ It is easy to verify that, if a valid partition of the list into combinations ex
 
 To improve performance, we implement the following branching strategy:
 
--- Branching strategy
+Branching strategy
 -
 - At the start of each recursive call, check the number of potential combinations for each un-combined piece, and pick the one with the lowest amount of potential combinations.
   - If a piece exists with zero potential combinations, the branch ends.
