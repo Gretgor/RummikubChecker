@@ -34,3 +34,10 @@ Brute force version: for every piece, it checks:
 - If none of the above work, return a failure state.
 
 It is easy to verify that, if a valid partition of the list into combinations exists, this algorithm finds it. In this state, however, it is very inefficient.
+
+To improve performance, we implement the following bounding conditions:
+
+== Bound 1 - Stray Pieces:
+=
+- If there exists a piece for which no combinations, existing or to be created, are available, return a failure state.
+
