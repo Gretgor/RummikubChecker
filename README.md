@@ -10,3 +10,7 @@ Output: True if the list can be broken down into valid combinations without any 
 == Rummikub pieces:
 
 Each Rummikub piece consists of two pieces of information: 
+- A number, between 1 and 13.
+- A color, between red, blue, yellow, and black.
+
+Each piece is represented by an ordered pair (number, color) in the program.
