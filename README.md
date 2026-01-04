@@ -35,9 +35,9 @@ Brute force version: for every piece, it checks:
 
 It is easy to verify that, if a valid partition of the list into combinations exists, this algorithm finds it. In this state, however, it is very inefficient.
 
-To improve performance, we implement the following bounding conditions:
+To improve performance, we implement the following branching strategy:
 
--- Bound 1 - Stray Pieces:
+-- Branching strategy
 -
-- If there exists a piece for which no combinations, existing or to be created, are available, return a failure state.
-
+- At the start of each recursive call, check the number of potential combinations for each un-combined piece, and pick the one with the lowest amount of potential combinations.
+  - If a piece exists with zero potential combinations, the branch ends.
